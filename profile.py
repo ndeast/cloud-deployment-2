@@ -18,13 +18,13 @@ link = request.LAN("lan")
  
 # Create 4 XenVMs
 for i in range(4):
-    node = request.XenVM("node-" + i+1)
-    iface = node.addInterface("if" + i+1)
+    node = request.XenVM("node-" + str(i+1))
+    iface = node.addInterface("if" + str(i+1))
     
     node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:CENTOS7-64-STD"
 
-    iface.component_id = "eth" + i+1
-    iface.addAddress(rspec.IPv4Address("192.168.1." + i+1, "255.255.255.0"))
+    iface.component_id = "eth" + str(i+1)
+    iface.addAddress(rspec.IPv4Address("192.168.1." + str(i+1), "255.255.255.0"))
 
     link.addInterface(iface)
 
