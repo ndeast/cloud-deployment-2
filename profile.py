@@ -35,7 +35,8 @@ for i in range(4):
         # Set public IP address
         node.routable_control_ip = "true"
         # Install and execute a script that is contained in the repository.
-        node.addService(pg.Execute(shell="sh", command="sudo /local/repository/silly.sh"))
+        node.addService(pg.Execute(
+            shell="sh", command="sudo chmod 755 /local/repository/silly.sh && sudo /local/repository/silly.sh"))
 
 # Print the RSpec to the enclosing page.
 pc.printRequestRSpec(request)
