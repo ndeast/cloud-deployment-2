@@ -37,9 +37,5 @@ for i in range(4):
         # Install and execute a script that is contained in the repository.
         node.addService(pg.Execute(shell="sh", command="/local/repository/silly.sh"))
 
-
-# Install and execute a script that is contained in the repository.
-node.addService(pg.Execute(shell="sh", command="/local/repository/silly.sh"))
-
 # Print the RSpec to the enclosing page.
 pc.printRequestRSpec(request)
